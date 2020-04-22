@@ -7,7 +7,7 @@ public class Again {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static void askEncore(){
+    public static void askEncore() {
         System.out.println("Voulez-vous faire un autre test ?");
     }
 
