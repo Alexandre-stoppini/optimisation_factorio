@@ -1,3 +1,5 @@
+package calcul;
+
 import java.util.Scanner;
 
 public class ProdDeBase {
@@ -33,7 +35,7 @@ public class ProdDeBase {
     java.text.DecimalFormat df = new java.text.DecimalFormat("0.##");
 
 
-    void production() {
+    public void production() {
         Scanner sc = new Scanner(System.in);
 
         //Faire une fonction qui analyse les entrées de l'user afin d'éviter le "." et mettre un "," à la place
