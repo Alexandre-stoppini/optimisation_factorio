@@ -2,7 +2,7 @@ package typeObjet;
 
 import java.util.Scanner;
 
-public class ChoixObjet {
+public class ChoixObjet_1_Ingredient {
     private static Scanner sc = new Scanner(System.in);
 
     public static void choixTypeObjet() {
