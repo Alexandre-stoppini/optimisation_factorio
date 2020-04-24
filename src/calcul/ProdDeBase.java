@@ -1,6 +1,7 @@
 package calcul;
 
-import typeObjet.Objets;
+import typeObjet.Objets_1_ingrédient;
+import typeObjet.Objets_1_ingrédient;
 import typeProduction.ItemsDeProduction;
 
 import java.util.Scanner;
@@ -39,7 +40,7 @@ public class ProdDeBase {
     java.text.DecimalFormat df = new java.text.DecimalFormat("0.##");
 
 
-    public void production(Objets objets, ItemsDeProduction itemsDeProduction) {
+    public void production(Objets_1_ingrédient objets, ItemsDeProduction itemsDeProduction) {
         Scanner sc = new Scanner(System.in);
 
         //Faire une fonction qui analyse les entrées de l'user afin d'éviter le "." et mettre un "," à la place
@@ -113,8 +114,8 @@ public class ProdDeBase {
         System.out.println("Il faudra " + df.format(nbMachineInput) + " machines pour avoir une saturation sur les convoyeurs en entrée de ligne de production" +
                 "\nIl faudra " + df.format(nbMachineOutput) + " machines pour avoir une saturation sur les convoyeurs en sortie de chaîne de production." +
                 "\nIl faudra en conséquence " + df.format(nbMachineOutput / nbMachineInput) + " ligne(s) de production !" +
-                "\nUne machine pollura de  " + pollutionMachine + " untité(s) par seconde." +
-                "\nUne machine consommera " + energyConsumptionMachine + " watts.");
+                "\nLa ligne de production aura une pollution de " + pollutionMachine * nbMachineInput + " par minute." +
+                "\nLa ligne de production consommera " + energyConsumptionMachine * nbMachineOutput + " watts.");
     }
 
 

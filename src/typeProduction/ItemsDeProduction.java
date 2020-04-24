@@ -2,9 +2,9 @@ package typeProduction;
 
 public enum ItemsDeProduction {
     four_electrique(2, 180, 1),
-    machine_assemblage_1(0.5,75,4),
-    machine_assemblage_2(0.75,150,3),
-    machine_assemblage_3(1.25,375,2),
+    machine_assemblage_1(0.5, 75, 4),
+    machine_assemblage_2(0.75, 150, 3),
+    machine_assemblage_3(1.25, 375, 2),
     ;
 
     private double vitesseProduction;

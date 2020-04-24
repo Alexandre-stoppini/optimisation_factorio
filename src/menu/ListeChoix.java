@@ -1,5 +1,5 @@
 package menu;
 
 public enum ListeChoix {
-    O,N
+    O, N
 }

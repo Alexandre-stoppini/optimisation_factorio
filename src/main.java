@@ -1,8 +1,9 @@
 import typeObjet.ChoixObjet;
-import typeObjet.Objets;
+import typeObjet.Objets_1_ingrédient;
 import calcul.ProdDeBase;
 import menu.Again;
 import menu.ListeChoix;
+import typeObjet.Objets_1_ingrédient;
 import typeProduction.ChoixProduction;
 import typeProduction.ItemsDeProduction;
 
@@ -11,16 +12,17 @@ public class main {
         boolean c = false;
 
         do {
-            // Première étape, demander à l'utilisateur l'objet à craft puis la machine servant à le craft
+            // Première étape, demander à l'utilisateur l'objet à craft
             ChoixObjet.choixTypeObjet();
-            Objets objets = ChoixObjet.typeObjet();
-            System.out.println("Vous avez choisi "+objets);
+            Objets_1_ingrédient objets = ChoixObjet.typeObjet();
+            System.out.println("Vous avez choisi " + objets);
 
+            // Première étape, demander à l'utilisateur la machine servant à craft
             ChoixProduction.choixMachineCraft();
             ItemsDeProduction itemsDeProduction = ChoixProduction.machineCraft();
-            System.out.println(objets + " sera craft dans " +itemsDeProduction);
+            System.out.println(objets + " sera craft dans " + itemsDeProduction);
 
-            // Deuxième étape création de l'objet prodDeBase et exécution de la méthode
+            // Troisième étape création de l'objet prodDeBase et exécution de la méthode
             ProdDeBase prodDeBase = new ProdDeBase();
             prodDeBase.production(objets, itemsDeProduction);
 

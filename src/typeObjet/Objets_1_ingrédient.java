@@ -1,6 +1,6 @@
 package typeObjet;
 
-public enum Objets {
+public enum Objets_1_ingrédient {
     plaque_fer(3.2, 1, 1),
     plaque_cuivre(3.2, 1, 1),
     plaque_acier(16.0, 5, 1),
@@ -19,7 +19,7 @@ public enum Objets {
     private int nbRessourceForCraft;
     private int nbItemCraft;
 
-    Objets(Double timeToCraft, int nbRessourceForCraft, int nbItemCraft) {
+    Objets_1_ingrédient(Double timeToCraft, int nbRessourceForCraft, int nbItemCraft) {
         this.timeToCraft = timeToCraft;
         this.nbRessourceForCraft = nbRessourceForCraft;
         this.nbItemCraft = nbItemCraft;
