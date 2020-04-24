@@ -75,20 +75,22 @@ public class ProdAvecUnIngredient extends ProdDeBase {
 
         // Calcul du temps de craft d'un item
         timeToCraft /= speedCraftingMachine;
-
+        // Ajout d'un facteur de 100% car deux ingrédients sont crafts par cycle
+        if (nbItemCraft == 2) {
+            productivityBonus += 100;
+        }
         // Calcul du nombre de machine nécssaire pour l'entrée et la sortie des matériaux
         nbMachineInput = convSpeed / nbRessourceForCraft * timeToCraft;
         nbMachineOutput = timeToCraft * convSpeed * (1 / (productivityBonus / 100));
 
         // Calcul du besoin en infrastructures de la ligne de prod
         elctricConsumption(nbMachineOutput,energyConsumptionMachine);
-
-        System.out.println("Il faudra " + df.format(nbMachineInput) + " machines pour avoir une saturation sur les convoyeurs en entrée de ligne de production" +
+        System.out.println("Il faudra " + df.format(nbMachineInput) + " machines pour consommer toutes les ressources disponibles sur un convoyeur saturé." +
                 "\nIl faudra " + df.format(nbMachineOutput) + " machines pour avoir une saturation sur les convoyeurs en sortie de chaîne de production." +
-                "\nIl faudra en conséquence " + df.format(nbMachineOutput / nbMachineInput) + " ligne(s) de production !" +
-                "\nLa ligne de production aura une pollution de " + pollutionMachine * nbMachineInput + " par minute." +
-                "\nLa ligne de production consommera " + global + " watts." +
-                "\nIl faudra en conséquent " + ef.format(nbSolarPannel+1) + " panneaux solaires et " + ef.format(nbAccumulators+1) + " accumulateurs pour maintenir une prod de jour comme de nuit.");
+                "\nIl faudra en conséquence " + df.format(nbMachineOutput / nbMachineInput) + " ligne(s) de production pour obtenir une saturation en sortie." +
+                "\nLa ligne de production aura une pollution de " + ef.format(pollutionMachine * nbMachineInput) + " par minute." +
+                "\nLa ligne de production consommera " + ef.format(global) + " watts." +
+                "\nIl faudra en conséquence " + ef.format(nbSolarPannel+1) + " panneaux solaires et " + ef.format(nbAccumulators+1) + " accumulateurs pour maintenir une prod de jour comme de nuit.");
     }
 
 }
