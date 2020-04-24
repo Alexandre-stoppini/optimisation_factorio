@@ -2,7 +2,9 @@ package menu;
 
 import calcul.ProdAvecUnIngredient;
 import typeObjet.ChoixObjet_1_Ingredient;
+import typeObjet.ChoixObjet_2_Ingredients;
 import typeObjet.Objets_1_ingrédient;
+import typeObjet.Objets_2_Ingredients;
 import typeProduction.ChoixProduction;
 import typeProduction.ItemsDeProduction;
 
@@ -35,10 +37,13 @@ public class ChoixNbIngredient {
             ProdAvecUnIngredient prodAvecUnIngredient = new ProdAvecUnIngredient();
             prodAvecUnIngredient.productionUnIngredient(objets, itemsDeProduction);
         } else if (choix == 2){
+            ChoixObjet_2_Ingredients.ChoixTypeObjet2();
+            Objets_2_Ingredients objets = ChoixObjet_2_Ingredients.typeObjet();
+            System.out.println("Vous avez choisi " + objets);
 
             ChoixProduction.choixMachineCraft();
             ItemsDeProduction itemsDeProduction = ChoixProduction.machineCraft();
-            System.out.println(" sera craft dans " + itemsDeProduction);
+            System.out.println(objets +" sera craft dans " + itemsDeProduction);
 
         }else  if (choix == 3){
 
