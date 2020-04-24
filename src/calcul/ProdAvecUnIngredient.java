@@ -88,7 +88,7 @@ public class ProdAvecUnIngredient extends ProdDeBase {
                 "\nIl faudra en conséquence " + df.format(nbMachineOutput / nbMachineInput) + " ligne(s) de production !" +
                 "\nLa ligne de production aura une pollution de " + pollutionMachine * nbMachineInput + " par minute." +
                 "\nLa ligne de production consommera " + global + " watts." +
-                "\nIl faudra en conséquent " + ef.format(nbSolarPannel+1) + " panneaux solaires et " + ef.format(nbAccumulators+1) + " pour maintenir une prod de jour comme de nuit.");
+                "\nIl faudra en conséquent " + ef.format(nbSolarPannel+1) + " panneaux solaires et " + ef.format(nbAccumulators+1) + " accumulateurs pour maintenir une prod de jour comme de nuit.");
     }
 
 }

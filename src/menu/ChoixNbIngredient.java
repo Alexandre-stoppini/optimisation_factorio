@@ -45,6 +45,7 @@ public class ChoixNbIngredient {
             ItemsDeProduction itemsDeProduction = ChoixProduction.machineCraft();
             System.out.println(objets +" sera craft dans " + itemsDeProduction);
 
+
         }else  if (choix == 3){
 
             ChoixProduction.choixMachineCraft();
