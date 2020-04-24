@@ -1,5 +1,7 @@
 package calcul;
 
+import typeObjet.Objets;
+
 import java.util.Scanner;
 
 public class ProdDeBase {
@@ -30,19 +32,20 @@ public class ProdDeBase {
     private double pollutionMachine; // pollution de base de la machine
     private double energyConsumptionMachine; // consommation énerétique de base de la machine
     private double minEnergyConsumptionMachine = 0.20; // niveau minimal d'énergie consommée par une machine (20% de sa valeur de base)
+    private int nbItemCraft;
 
     // Définition de l'arrondi à 2 chiffres après la virgule
     java.text.DecimalFormat df = new java.text.DecimalFormat("0.##");
 
 
-    public void production() {
+    public void production(Objets objets) {
         Scanner sc = new Scanner(System.in);
 
         //Faire une fonction qui analyse les entrées de l'user afin d'éviter le "." et mettre un "," à la place
-        System.out.println("Temps de fabrication de base de l'objet :");
-        timeToCraft = sc.nextDouble();
-        System.out.println("Nombre de ressources nécessaire pour craft un objet :");
-        nbRessouceForCraft = sc.nextInt();
+        nbItemCraft = objets.getNbItemCraft();
+        nbRessouceForCraft = objets.getNbRessourceForCraft();
+        timeToCraft = objets.getTimeToCraft();
+
 
         //Demande des caractéristiques de la machine
         System.out.println("Coefficient de vitesse de la machine de production : ");
