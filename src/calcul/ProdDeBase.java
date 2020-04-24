@@ -1,6 +1,7 @@
 package calcul;
 
 import typeObjet.Objets;
+import typeProduction.ItemsDeProduction;
 
 import java.util.Scanner;
 
@@ -38,7 +39,7 @@ public class ProdDeBase {
     java.text.DecimalFormat df = new java.text.DecimalFormat("0.##");
 
 
-    public void production(Objets objets) {
+    public void production(Objets objets, ItemsDeProduction itemsDeProduction) {
         Scanner sc = new Scanner(System.in);
 
         //Faire une fonction qui analyse les entrées de l'user afin d'éviter le "." et mettre un "," à la place
@@ -48,12 +49,9 @@ public class ProdDeBase {
 
 
         //Demande des caractéristiques de la machine
-        System.out.println("Coefficient de vitesse de la machine de production : ");
-        speedCraftingMachine = sc.nextFloat();
-        System.out.println("Valeur de pollution de la machine : ");
-        pollutionMachine = sc.nextDouble();
-        System.out.println("Consommation énergétique de la machine :");
-        energyConsumptionMachine = sc.nextDouble();
+        speedCraftingMachine = itemsDeProduction.getVitesseProduction();
+        pollutionMachine = itemsDeProduction.getPollution();
+        energyConsumptionMachine = itemsDeProduction.getConsommationElectrique();
 
         // Demande le nombre de modules et leurs niveaux
         System.out.println("Nombre de module de vitesse :");
