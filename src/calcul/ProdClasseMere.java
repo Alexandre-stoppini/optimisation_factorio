@@ -1,6 +1,8 @@
 package calcul;
 
-public class ProdDeBase {
+import java.util.Scanner;
+
+public class ProdClasseMere {
 
 
     // Nombre de modules
@@ -36,7 +38,44 @@ public class ProdDeBase {
 
     protected java.text.DecimalFormat df =new java.text.DecimalFormat("0.##"); // défini le nombre de chiffres après le zéro afin d'arrondir un nombre complexe
     protected java.text.DecimalFormat ef= new java.text.DecimalFormat(("0"));
+    protected Scanner sc = new Scanner(System.in);
 
+
+
+
+
+    protected void convoyeur(){
+        System.out.println("Niveau des convoyeurs :");
+        convSpeed = sc.nextInt();
+        if (convSpeed == 1) {
+            convSpeed = 15;
+        } else if (convSpeed == 2) {
+            convSpeed = 30;
+        } else if (convSpeed == 3) {
+            convSpeed = 45;
+        }
+    }
+
+    protected void module (){
+        System.out.println("Nombre de module de vitesse :");
+        nbSpeedModule = sc.nextInt();
+        if (nbSpeedModule != 0) {
+            System.out.println("Niveau des modules de vitesse :");
+            speedModuleLevel = sc.nextInt();
+        }
+        System.out.println("Nombre de module de productivité :");
+        nbProductivityModule = sc.nextInt();
+        if (nbProductivityModule != 0) {
+            System.out.println("Niveau des modules de productivité :");
+            productivityModuleLevel = sc.nextInt();
+        }
+        System.out.println("Nombre de module d'efficacité :");
+        nbEfficiencyModule = sc.nextInt();
+        if (nbEfficiencyModule != 0) {
+            System.out.println("Niveau des modules d'efficacité :");
+            efficiencyModuleLevel = sc.nextInt();
+        }
+    }
 
     protected void speedModuleImpact(int speedModuleLevel, int nbSpeedModule) {
         for (int i = 0; i < nbSpeedModule; i++) {
